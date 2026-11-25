@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-char password[] = "password";
+char password[] = "my_password1";
 char *encode_key = "0";
 int sign = 1;
 int key_index = 0;
@@ -29,11 +29,11 @@ int main(int argc, char **argv) {
     infile = stdin;
     outfile = stdout;
 
-    for(int i = 1; i < argc; i++) {
+    for(int i = 0; i < argc; i++) {
         if(debug) {
             fprintf(stderr, "%s\n", argv[i]);
         }
-        if(argv[i][0] == '-' && argv[i][1] == 'D') {
+        if(argv[i][0] == '-' && argv[i][1] == 'D' && argv[i][2] == '\0') {
             debug = 0;
         }
         if(argv[i][0] == '+' && argv[i][1] == 'D') {
