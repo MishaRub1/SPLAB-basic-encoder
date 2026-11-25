@@ -74,7 +74,7 @@ int main(int argc, char **argv) {
             }
         }
     }
-    for (int c = fgetc(infile); c != EOF; c = fgetc(infile)) {
+    for (int c = fgetc(infile); !feof(infile); c = fgetc(infile)) {
         fputc(encode(c), outfile);
     }
     fclose(infile);
